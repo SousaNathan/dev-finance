@@ -1,0 +1,351 @@
+/* ===== global =====  */
+:root{
+    --darkBlue: #363f5f;
+    --ligthGreen: #3dd705;
+    --green: #49aa26;
+    --darkGreen: #2d4a22;
+    --red: #e92929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 93.75%; /*100% = 16px / 93.75px = 15%*/
+}
+
+body{
+    background-color: #f2f0f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+
+/*
+No lugar de apenas esconder o elemento na tela com
+display: none;
+ou
+visinility: hidden;
+usamos esses truques para auxiliar e nao afetar
+os leitores de tela e a acessibilidade.
+*/
+}
+
+.container{
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+/* ===== Links e Botões =====  */
+
+a{
+    color: var(--green);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--lightGreen);
+}
+
+button{
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    border: none;
+    color: white;
+    background: var(--green);
+    border-radius: 0.35rem;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--ligthGreen);
+}
+
+.button.new{
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.button.new:hover{
+    color: var(--ligthGreen);
+}
+
+.button.cancel{
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.35rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6; 
+}
+
+.button.cancel:hover{
+    opacity: 1;
+}
+
+/* ===== titulos =====  */
+
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.2rem;
+    color: var(--darkBlue);
+    font-weight: 400;
+}
+
+/* ===== header =====  */
+
+header{
+    padding: 2rem 0 11rem;
+    text-align: center;
+    background: var(--darkGreen);
+}
+
+#logo{
+    color: white;
+    font-weight: 100;
+}
+
+/* ===== main =====  */
+
+/* ===== balanco =====  */
+
+#balanco{
+    margin-top: -6.5rem;
+}
+
+#balanco h2{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* ===== cards =====  */
+
+#cards{
+    margin-bottom: 1.5rem;
+}
+
+.card{
+    background: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.35rem;
+}
+
+.card h3{
+    font-size: 1rem;
+    color: var(--darkBlue);
+    display: flex; /*torna os elementos flexiveis para o uso das prop abaixo*/
+    align-items: center; /*alinha os itens no eixo horizontal*/
+    justify-content: space-between; /*adiciona um espaço entre os elementos*/
+}
+
+.card p{
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+    color: var(--darkBlue);
+}
+
+.card.total{
+    background: var(--green);
+    margin-bottom: 1.8rem;
+    padding: 1.5rem 2rem;
+    border-radius: .25rem;
+}
+
+.card.total h3{
+    font-size: 1rem;
+    color: white;
+
+    display: flex; /*torna os elementos flexiveis para o uso das prop abaixo*/
+    align-items: center; /*alinha os itens no eixo horizontal*/
+    justify-content: space-between; /*adiciona um espaço entre os elementos*/
+}
+
+.card.total p{
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+/* ===== tansacoes =====  */
+
+#transacoes{
+    display: block;
+    width: 100%;
+    overflow-x: auto; /*cria um scroll para o lado quando necessário*/
+}
+
+#transacoes h2{
+    margin-bottom: 1rem;   
+}
+
+/* ===== tabela =====  */
+
+#tabelaTransacoes{
+    width: 100%;
+    border-spacing: 0 0.5rem;
+}
+
+#tabelaTransacoes th{
+    margin: 1rem;
+    background: white;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+#tabelaTransacoes td{
+    margin: 1rem;
+    background: white;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-weight: normal;
+}
+
+#tabelaTransacoes tr{
+    opacity: 0.7;
+}
+#tabelaTransacoes tbody tr:hover{
+    opacity: 1;
+}
+
+#tabelaTransacoes thead tr th:first-child,
+#tabelaTransacoes tbody tr td:first-child
+{
+    border-radius: 0.35rem 0 0 0.35rem;
+}
+
+#tabelaTransacoes thead tr th:last-child,
+#tabelaTransacoes tbody tr td:last-child
+{
+    border-radius: 0 0.35rem 0.35rem 0;
+}
+
+td.descricao {
+    color: var(--darkBlue)
+}
+
+td.income{
+    color: #12a454;
+}
+
+td.expense{
+    color: #e92929;
+}
+
+td.data{
+    color: var(--darkBlue)
+}
+
+/* ===== modal =====  */
+
+.modalOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /*rgba (a = transparencia)*/
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.modalOverlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal{
+    background: #f0f2f5;
+    padding: 2.4rem; /*definindo apenas o padding a caixa cresce conforme o conteúdo*/
+    position: relative;
+    z-index: 1;;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 0.35rem;
+}
+
+/* ===== formulario modal =====  */
+
+#formulario{
+    max-width: 500px;
+}
+
+#formulario h2{
+    margin-top: 0;
+}
+
+#formulario form input{
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.inputGrupo{
+    margin-top: 0.8rem;
+}
+
+.inputGrupo small{
+    opacity: 0.4;
+}
+
+.inputGrupo.acoes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputGrupo.acoes .button,
+.inputGrupo.acoes button{
+    width: 48%;
+}
+
+/* ===== footer =====  */
+
+footer{
+    text-align: center;
+    padding: 4rem 0 2rem 0;
+}
+
+footer p{
+    color: var(--darkBlue);
+    opacity: 0.7;
+}
+
+
+
+/* ===== Responcividade =====  */
+
+@media (min-width: 800px) {
+    html{
+        font-size: 87.5%;
+    }
+
+    #cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
