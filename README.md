@@ -1,2 +1,6 @@
 # dev-finance
- Gerênciador financeiro pessoal
+
+### Gerênciador financeiro pessoal
+
+Projeto construído no programa Maratona Discovery ministrado pela Rocketseat.
+
